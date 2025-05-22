@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="dashboard-container">
+  <div class="page-header">
+    <h2>Gerenciamento de Transações</h2>
+  </div>
+  
+  <nav class="dashboard-nav">
+    <ul>
+      <li><a href="/admin">Visão Geral</a></li>
+      <li><a href="/admin/clientes">Clientes</a></li>
+      <li><a href="/admin/transacoes" class="active">Transações</a></li>
+      <li><a href="/admin/config">Configurações</a></li>
+    </ul>
+  </nav>
+  
+  <div class="action-bar">
+    <a href="/admin/transacoes/nova" class="btn btn-primary">Nova Transação</a>
+    <form class="search-form" method="get" action="/admin/transacoes">
+      <input type="text" name="search" placeholder="Pesquisar transações..." class="form-control">
+      <button type="submit">Buscar</button>
+    </form>
+  </div>
+  
+  <div class="table-responsive">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Data</th>
+          <th>Origem</th>
+          <th>Destino</th>
+          <th>Valor (R$)</th>
+          <th>Status</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>2023-05-01</td>
+          <td>12345-6</td>
+          <td>54321-6</td>
+          <td>500.00</td>
+          <td><span class="status-badge status-concluído">Concluído</span></td>
+          <td class="action-buttons">
+            <a href="/admin/transacoes/detalhes/1" class="btn btn-secondary">Detalhes</a>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>2023-05-02</td>
+          <td>54321-6</td>
+          <td>67890-1</td>
+          <td>200.00</td>
+          <td><span class="status-badge status-concluído">Concluído</span></td>
+          <td class="action-buttons">
+            <a href="/admin/transacoes/detalhes/2" class="btn btn-secondary">Detalhes</a>
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>2023-05-03</td>
+          <td>67890-1</td>
+          <td>12345-6</td>
+          <td>100.00</td>
+          <td><span class="status-badge status-pendente">Pendente</span></td>
+          <td class="action-buttons">
+            <a href="/admin/transacoes/detalhes/3" class="btn btn-secondary">Detalhes</a>
+            <a href="/admin/transacoes/cancelar/3" class="btn btn-danger">Cancelar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="dashboard-box">
+  <h2>Painel Administrativo</h2>
+  
+  <nav class="header-nav">
+    <ul>
+      <li><a href="/admin">Visão Geral</a></li>
+      <li><a href="/admin/clientes">Clientes</a></li>
+      <li><a href="/admin/transacoes">Transações</a></li>
+      <li><a href="/admin/config">Configurações</a></li>
+    </ul>
+  </nav>
+  
+  <div class="welcome-message">
+    <h3>Bem-vindo, {{ usuario }}!</h3>
+    <p>Você está no painel de administração do Banco Seguro.</p>
+    
+    <div class="stats">
+      <div class="stat-card">
+        <h4>Clientes Ativos</h4>
+        <p>1,245</p>
+      </div>
+      <div class="stat-card">
+        <h4>Transações Hoje</h4>
+        <p>R$ 2,456,789</p>
+      </div>
+      <div class="stat-card">
+        <h4>Alertas</h4>
+        <p>3</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

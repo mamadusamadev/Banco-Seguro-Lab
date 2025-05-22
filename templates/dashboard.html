@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="admin-panel">
+  <div class="admin-header">
+    <h1>Painel Administrativo</h1>
+  </div>
+
+  <div class="sidebar">
+    <ul class="sidebar-menu">
+      <li><a href="/admin" class="active">Visão Geral</a></li>
+      <li><a href="/admin/clientes">Clientes</a></li>
+      <li><a href="/admin/transacoes">Transações</a></li>
+      <li><a href="/admin/config">Configurações</a></li>
+    </ul>
+  </div>
+
+  <div class="admin-welcome">
+    <h2>Bem-vindo, {{ usuario }}!</h2>
+    <p>Você está no painel de administração do Banco Seguro.</p>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <h3>Clientes Ativos</h3>
+      <p>1,245</p>
+    </div>
+    <div class="stat-card">
+      <h3>Transações Hoje</h3>
+      <p>R$ 2,456,789</p>
+    </div>
+    <div class="stat-card">
+      <h3>Alertas</h3>
+      <p>3</p>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>⚠️ Ambiente de testes de segurança cibernética | Banco Seguro Lab</p>
+</footer>
+{% endblock %}

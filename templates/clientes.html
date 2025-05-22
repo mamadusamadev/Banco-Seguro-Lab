@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="dashboard-container">
+  <div class="page-header">
+    <h2>Gerenciamento de Clientes</h2>
+  </div>
+  
+  <nav class="dashboard-nav">
+    <ul>
+      <li><a href="/admin">Visão Geral</a></li>
+      <li><a href="/admin/clientes" class="active">Clientes</a></li>
+      <li><a href="/admin/transacoes">Transações</a></li>
+      <li><a href="/admin/config">Configurações</a></li>
+    </ul>
+  </nav>
+  
+  <div class="action-bar">
+    <a href="/admin/clientes/novo" class="btn btn-primary">Adicionar Cliente</a>
+    <form class="search-form" method="get" action="/admin/clientes">
+      <input type="text" name="search" placeholder="Pesquisar cliente..." class="form-control">
+      <button type="submit">Buscar</button>
+    </form>
+  </div>
+  
+  <div class="table-responsive">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>CPF</th>
+          <th>Conta</th>
+          <th>Saldo</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1001</td>
+          <td>João Silva</td>
+          <td>123.456.789-00</td>
+          <td>12345-6</td>
+          <td>R$ 5,678.90</td>
+          <td class="action-buttons">
+            <a href="/admin/clientes/editar/1001" class="btn btn-secondary">Editar</a>
+            <a href="/admin/clientes/excluir/1001" class="btn btn-danger">Excluir</a>
+          </td>
+        </tr>
+        <!-- Mais linhas de clientes aqui -->
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
