@@ -1,9 +1,8 @@
-from flask import Flask, request, render_template, redirect, session, url_for,flash
-from flask_session import Session
+from flask import Flask, request, render_template, redirect, session, url_for, flash
+
 app = Flask(__name__)
 app.secret_key = "vulnlabsecret"
-app.config["SESSION_TYPE"] = "filesystem"
-Session(app)
+
 
 # Credenciais vulneráveis
 USUARIO = "admin"
